@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+
+  app:
+    container_name: projet-sir
+    image: projet-sir
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - dbpostgresql
+
+
+  dbpostgresql:
+    container_name: projet-sir-2022
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: projet-sir
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
