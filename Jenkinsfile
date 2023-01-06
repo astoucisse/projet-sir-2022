@@ -29,11 +29,7 @@ pipeline{
                 sh 'echo "Deploying into Server "'
             }
         }
-       stage (' deployment test') {
-              steps{
-                        sh 'docker compose up'
-                        }
-                   }
+
     } // stages
 
     post {
