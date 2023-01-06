@@ -4,7 +4,7 @@ services:
 
   app:
     container_name: projet-sir
-    image: projet-sir
+    image: group3
     build:
       context: .
       dockerfile: Dockerfile
