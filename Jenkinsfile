@@ -34,7 +34,7 @@ pipeline{
 
     post {
         aborted {
-            echo "Sending message to Agent"
+            echo "Sending message to Astou"
         } // aborted
 
         failure {
