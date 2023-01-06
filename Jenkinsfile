@@ -21,6 +21,14 @@ pipeline{
                 sh 'mvn sonar:sonar'
             }
         }
+         stage ('test deployment') {
+                    input {
+                        message 'voulez-vous deployer'
+                    }
+                    steps{
+                        sh 'docker compose up'
+                    }
+                }
 
         stage ('Approve Deployment') {
             input {
