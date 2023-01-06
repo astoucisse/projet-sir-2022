@@ -22,9 +22,6 @@ pipeline{
             }
         }
          stage ('test deployment') {
-                    input {
-                        message 'voulez-vous deployer'
-                    }
                     steps{
                         sh 'docker compose up'
                     }
