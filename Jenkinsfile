@@ -33,7 +33,13 @@ pipeline{
                           sh 'docker push  projet-sir:1'
                          }
                   }
-
+      /*  stage ('Deploy to kubernetes') {
+                 steps{
+                        sh 'chmod +x changeTag.sh'
+                        sh './changeTag.sh'
+                     }
+                  }
+*/
 
        stage ('Approve Deployment') {
             input {
