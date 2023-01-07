@@ -3,9 +3,6 @@ pipeline{
     tools{
         maven '3.6.3'
     }
-    environment{
-       DOCKER_TAG = getDockerTag()
-    }
 
     stages{
         stage('Source') {
@@ -26,14 +23,14 @@ pipeline{
         }
         stage ('Build Docker image') {
                     steps{
-                        sh 'docker build . -t  projet-sir:${DOCKER_TAG}'
+                        sh 'docker build . -t  projet-sir:1'
                     }
                }
         stage ('DockerHub Push') {
                   steps{
                   withCredentials([string(credentialsId:'docker-hub',variable:'astou0603')])
                           sh 'docker login -u astoucisse -p ${astou0603}'
-                          sh 'docker push  projet-sir:${DOCKER_TAG}'
+                          sh 'docker push  projet-sir:1'
                          }
                   }
 
