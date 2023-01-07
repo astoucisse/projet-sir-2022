@@ -29,7 +29,7 @@ pipeline{
                         sh 'docker build . -t  projet-sir:${DOCKER_TAG}'
                     }
                }
-        stage ('Dockerhub Push') {
+        stage ('DockerHub Push') {
                   steps{
                   withCredentials([string(credentialsId:'docker-hub',variable:'astou0603')])
                           sh 'docker login -u astoucisse -p ${astou0603}'
