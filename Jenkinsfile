@@ -5,7 +5,7 @@ pipeline{
     }
 
     stages{
-        stage('Source') {
+        stage('Source ') {
             steps{
                 git branch: 'main', url: 'https://github.com/astoucisse/projet-sir-2022.git'
             }
